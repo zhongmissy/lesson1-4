@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        #wrapper {
+            width: 500px;
+            height: 200px;
+            margin: 10px auto;
+        }
+
+        #btns {
+            height: 40px;
+        }
+
+        #btns a {
+            width: 8px;
+            height: 8px;
+            float: left;
+            margin: 5px;
+        }
+
+        #btns #bt1 {
+            border: 4px solid green;
+            background-color: green;
+        }
+
+        #btns #bt2 {
+            border: 4px solid red;
+            background-color: red;
+        }
+
+        #btns #bt3 {
+            border: 4px solid black;
+            background-color: black;
+        }
+
+        #fruits {
+            height: 50px;
+            width: 600px;
+            background-color: green;
+            display: flex;
+        }
+
+        #fruits div {
+            flex-grow: 1;
+            border: 1px solid white;
+            text-align: center;
+            font-size: 25px;
+            color: white;
+            line-height: 48px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="bt1.css">
+    <script>
+        window.onload = function () {
+            let btns = document.getElementsByTagName("a");
+            let cssLink = document.getElementsByTagName("link")[0];
+            for(let i=0;i<btns.length;i++){
+				btns[i].onclick=function () {
+					cssLink['href']=this.id+'.css';
+				}
+			}
+		}
+
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id='btns'>
+            <a id="bt1" href="#"></a>
+            <a id="bt2" href="#"></a>
+            <a id="bt3" href="#"></a>
+        </div>
+        <div id='fruits'>
+            <div>苹果</div>
+            <div>苹果</div>
+            <div>苹果</div>
+            <div>苹果</div>
+            <div>苹果</div>
+        </div>
+    </div>
+</body>
+
+</html>

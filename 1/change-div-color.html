@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body{
+            margin:10px auto;
+            text-align: center;
+            width: 360px;
+            height: 500px;
+        }
+         .wrapper{
+           margin: 0 auto;
+        }
+        .wrapper div{
+            width: 100px;
+            height: 100px;
+            background: #000;
+            float:left;
+             margin:10px;
+        }
+
+    
+    </style>
+    <script>
+window.onload=function(){
+    let bt = document.getElementsByTagName("button")[0];
+    let boxes = document.getElementsByClassName("wrapper")[0].getElementsByTagName("div");
+    bt.onclick = function(){
+    for(let i = 0; i < boxes.length;i++){
+       boxes[i].style.backgroundColor="red";
+    }
+    }
+}
+    </script>
+</head>
+
+<body>
+    <button>变成红色</button>
+<div class="wrapper">
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+</body>
+
+</html>

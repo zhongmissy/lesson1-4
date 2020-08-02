@@ -1,0 +1,28 @@
+1. 样式初始化：<link rel="stylesheet" href="remove_style.css">
+
+2.引入图标字体：（先要下载免费的图标字体css） <link rel="stylesheet" href="font_taobaotopbar/iconfont.css">
+ 
+3.引入项目公共样式：css<link rel="stylesheet" href="common.css">
+
+4.引入当前网页样式：css<link rel="stylesheet" href="index.css">
+
+5.插入网页图标：<link rel="icon" href="img/favicon.ico">
+
+6. 引入外部js代码：<script type="text/javascript" src="01.js"></script>
+
+7. 引入外部字体：css：
+@font-face {
+  font-family: 'MyWebFont';
+  src: url('webfont.eot'); /* IE9 Compat Modes */
+  src: url('webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+或者下载google fonts 然后复制<link href="地址"  rel="stylesheet">
+
+body {
+  font-family: 'MyWebFont', Fallback, sans-serif;
+}  
+
