@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 400px;
+            height: 400px;
+            border: 1px solid black;
+            padding: 20px;
+        }
+
+        .wrapper div {
+            margin: 10px;
+        }
+
+        .hint {
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            padding: 20px;
+            color: white;
+            background: black;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            let conf = document.getElementById("confirm");
+            let res = document.getElementById("reset");
+            let hint = document.getElementsByClassName("hint")[0];
+            conf.onclick = function () {
+                let name = document.getElementById("prop-name").value;
+                let value = document.getElementById("prop-value").value;
+                changeStyle(hint, name, value);
+            }
+            res.onclick = function () {
+                changeStyle(hint, "background", "black");
+            }
+        }
+        function changeStyle(target, a, b) {
+            target.style[a] = b;
+        }
+    </script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div> 属性名： <input id="prop-name" type="text" value="background"></div>
+        <div> 属性值： <input id="prop-value" type="text" value="blue"> </div>
+        <div>
+            <button id="confirm">确定</button>
+            <button id="reset">重置</button>
+        </div>
+        <div class="hint">
+            在上方输入框输入"属性名"及"属性值"，点击确定按钮查看效果。
+        </div>
+    </div>
+</body>
+
+</html>

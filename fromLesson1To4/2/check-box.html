@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0 auto;
+            background-color: black;
+            font-weight: bold;
+        }
+        div {
+            width: 120px;
+            border: 1px solid black;
+            padding: 20px;
+            margin: 10px auto;
+            border-radius: 10px;
+            background-color: blanchedalmond;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            margin-top: 10px;
+        }
+        a{
+            float:right;
+            margin-top:3px;
+            font-size: smaller;
+        }
+    </style>
+    <script>
+
+        window.onload = function () {
+            let sel_all = document.getElementById("select-all");
+            let others = document.getElementsByTagName("ul")[0].getElementsByTagName("input");
+            let reverse = document.getElementsByTagName("a")[0];
+            let hint = document.getElementsByTagName("span")[0];
+            //全选框影响下面多选框
+            sel_all.onclick = function () {
+                for (let i = 0; i < others.length; i++) {
+                    others[i].checked = this.checked;
+                }
+                if(sel_all.checked){
+                     hint.innerHTML="全不选";
+                }else{
+                    hint.innerHTML="全选";
+                }
+            }
+            //任意多选框被点击后遍历多选框检查影响全选框
+            for (let i = 0; i < others.length; i++) {
+                others[i].onclick = function () {
+                    let flag = true;
+                    for (let i = 0; i < others.length; i++) {
+                        if (!others[i].checked) {
+                            flag = false;
+                        }
+                    }
+                    sel_all.checked = flag;
+                }
+            }
+            //反选
+            reverse.onclick = function(){
+           if(sel_all.checked){
+               sel_all.checked=false;
+           }else{
+            sel_all.checked=true;
+           }
+                for (let i = 0; i < others.length; i++) {
+                   if(others[i].checked){
+                    others[i].checked=false;
+                   } else{
+                    others[i].checked=true;
+                   }
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div>  
+        <input id="select-all" type="checkbox"> <span> 全选</span>
+        <a id="reverse" href="#">反选</a>
+        <ul>
+            <li><input type="checkbox">选项一</li>
+            <li><input type="checkbox">选项一</li>
+            <li><input type="checkbox">选项三</li>
+            <li><input type="checkbox">选项一</li>
+            <li><input type="checkbox">选项一</li>
+            <li><input type="checkbox">选项六</li>
+            <li><input type="checkbox">选项一</li>
+            <li><input type="checkbox">选项八</li>
+            <li><input type="checkbox">选项一</li>
+            <li><input type="checkbox">选项十</li>
+
+        </ul>
+    </div>
+</body>
+
+</html>

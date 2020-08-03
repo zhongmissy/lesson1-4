@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0 auto;
+            background-color: black;
+        }
+
+        .img-bar {
+            border: 1px solid black;
+            background-color: #fff;
+            border-radius: 4px;
+            margin: 10px auto;
+            width: 210px;
+            height: 262px;
+        }
+
+        .wrapper {
+            padding: 2px;
+            width: 200px;
+            height: 250px;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            grid-column-gap: 2px;
+            grid-row-gap: 2px;
+        }
+
+        .big {
+            grid-column-start: 1;
+            grid-column-end: 4;
+            grid-row-start: 1;
+            grid-row-end: 4;
+        }
+
+        img {
+            vertical-align: bottom;
+            text-align: center;
+        }
+    </style>
+    <script>
+
+window.onload=function(){
+    let all_imgs = document.getElementsByTagName("img");
+    let arr=[];
+    for (let i = 0; i< all_imgs.length;i++){
+        arr.push(all_imgs[i]);
+    }
+    let small_imgs = arr.slice(1);
+    for(let i = 0; i< small_imgs.length;i++){
+          small_imgs[i].onmouseover = function(){ 
+            let big_img=all_imgs[0]; 
+         big_img.src="img/big_"+(i+1)+".jpg";
+          }
+    }
+}
+    </script>
+</head>
+
+<body>
+    <div class="img-bar">
+
+
+        <div class="wrapper">
+            <div class=big>
+                <img id="main" src="img/big_1.jpg" alt="">
+            </div>
+            <div id="i1"> <img src="img/small_1.jpg" alt=""> </div>
+            <div id="i2"> <img src="img/small_2.jpg" alt=""> </div>
+            <div id="i3"> <img src="img/small_3.jpg" alt=""> </div>
+            <div id="i4"> <img src="img/small_4.jpg" alt=""> </div>
+            <div id="i5"> <img src="img/small_5.jpg" alt=""> </div>
+            <div id="i6"> <img src="img/small_6.jpg" alt=""> </div>
+            <div id="i7"> <img src="img/small_7.jpg" alt=""> </div>
+            <div id="i8"> <img src="img/small_8.jpg" alt=""> </div>
+            <div id="i9"> <img src="img/small_9.jpg" alt=""> </div>
+            <div id="i10"> <img src="img/small_10.jpg" alt=""> </div>
+            <div id="i11"> <img src="img/small_11.jpg" alt=""> </div>
+        </div>
+    </div>
+</body>
+
+</html>

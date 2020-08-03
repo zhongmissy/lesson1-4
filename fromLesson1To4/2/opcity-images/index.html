@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0 auto;
+        }
+
+        .box {
+            border: 1px solid black;
+            width: 710px;
+            height: 290px;
+            margin: 10px auto;
+        }
+
+        .box img {
+            width: 128px;
+            height: 128px;
+            border: 1px solid black;
+            vertical-align: bottom;
+            float: left;
+            margin-left: 10px;
+            margin-top: 10px;
+            opacity: 0.3;
+        }
+        /* .box img:hover{
+            opacity:1;
+        } */
+    </style>
+    <script>
+
+        window.onload = function () {
+            let imgs = document.getElementsByClassName("box")[0].getElementsByTagName("img");
+            for (let i = 0; i < imgs.length; i++) {
+                imgs[i].onmouseover = function () {
+                  this.style.opacity = "1";
+                }
+                imgs[i].onmouseout = function () {
+                  this.style.opacity = "0.3";
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <img src="images/1.jpg" alt="">
+        <img src="images/2.jpg" alt="">
+        <img src="images/3.jpg" alt="">
+        <img src="images/4.jpg" alt="">
+        <img src="images/5.jpg" alt="">
+        <img src="images/6.jpg" alt="">
+        <img src="images/7.jpg" alt="">
+        <img src="images/8.jpg" alt="">
+        <img src="images/9.jpg" alt="">
+        <img src="images/10.jpg" alt="">
+    </div>
+</body>
+
+</html>
